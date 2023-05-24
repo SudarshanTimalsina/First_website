@@ -1,9 +1,33 @@
-import random
-import string
-
-x= input("Length of password :")
-a= int(1)
-y=1
-for i in range(a):
-    password = ''.join(random.choices(string.ascii_letters + x + "!!"+"@@@"+ string.digits, k=int(x)))
-    print("here is your password: " + password)
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Password Generator</title>
+    <script>
+        function generatePassword() {
+            var length = document.getElementById("passwordLength").value;
+            var passwordCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" +
+                document.getElementById("name").value +
+                "!!@@@" +
+                "0123456789";
+            var password = "";
+            
+            for (var i = 0; i < length; i++) {
+                password += passwordCharacters.charAt(Math.floor(Math.random() * passwordCharacters.length));
+            }
+            
+            document.getElementById("output").textContent = "Here is your password: " + password;
+        }
+    </script>
+</head>
+<body>
+    <h1>Password Generator</h1>
+    <label for="name">Length of Password:</label>
+    <input type="text" id="passwordLength">
+    <br>
+    <label for="name">Your Name:</label>
+    <input type="text" id="name">
+    <br>
+    <button onclick="generatePassword()">Generate Password</button>
+    <p id="output"></p>
+</body>
+</html>
