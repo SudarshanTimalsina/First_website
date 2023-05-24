@@ -1,0 +1,9 @@
+import random
+import string
+
+x= input("Length of password :")
+a= int(1)
+y=1
+for i in range(a):
+    password = ''.join(random.choices(string.ascii_letters + x + "!!"+"@@@"+ string.digits, k=int(x)))
+    print("here is your password: " + password)
