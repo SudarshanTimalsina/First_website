@@ -12,7 +12,8 @@ function generateString(length) {
 }
 
 function logic() {
-    const url = document.getElementById("url").value;
+    const rl = document.getElementById("url").value;
+  const url =rl.toLowerCase()
   const check = url.includes("www.") && url.includes(".com");
 if (check === true){
   const backlink = generateString(6);
@@ -22,5 +23,15 @@ document.getElementById("output").textContent = shortenedUrl
 else{
   alert("please provide a valid web address!")
 }}
-const msg = "The Website is yet to be finished!"
-document.getElementById("gms").textContent = msg
+
+function prank() {
+  const lr = document.getElementById("url").value;
+  const abc =lr.toLowerCase()
+  const chk = abc.includes("www.") && abc.includes(".com");
+if (chk === true){
+ const pr="https://www.sudarshantimalsina.com.np/xvgch"
+document.getElementById("gms").textContent = pr
+  }
+else{
+  alert("please provide a valid web address!")
+}}
