@@ -3,14 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>File Download</title>
+    <title>Password Protected Image</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #8e44ad, #3498db);
+            font-family: Arial, sans-serif;
+            margin: 0;
+            color: white;
+        }
+
+        #container {
+            text-align: center;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        input[type="password"] {
+            padding: 0.8rem;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            width: 80%;
+        }
+
+        button {
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            background: #e74c3c;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #c0392b;
+        }
+
+        #image {
+            display: none;
+            margin-top: 2rem;
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5);
+        }
+    </style>
 </head>
 <body>
-    <h1>Download Files</h1>
-    <ul>
-        <li><a href="folder/IMG_0345.jpeg" download="IMG_0345.jpeg">Download IMG_0345.jpeg</a></li>
-        <li><a href="folder/1.pdf" download="1.pdf">Download 1.pdf</a></li>
-        <li><a href="folder/2.docs" download="2.docs">Download 2.docs</a></li>
-    </ul>
+    <div id="container">
+        <h1>Password Protected Image</h1>
+        <p>Password please:</p>
+        <input type="password" id="passwordInput" placeholder="Enter your password">
+        <br>
+        <button onclick="checkPassword()">Submit</button>
+        <img id="image" src="image.jpg" alt="Secret Image">
+    </div>
+
+    <script>
+        function checkPassword() {
+            const password = document.getElementById('passwordInput').value;
+            const correctPassword = "pandey"; // Replace this with your password
+
+            if (password === correctPassword) {
+                document.getElementById('image').style.display = 'block';
+            } else {
+                alert("Incorrect password. Try again!");
+            }
+        }
+    </script>
 </body>
 </html>
