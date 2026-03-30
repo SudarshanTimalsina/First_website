@@ -1,83 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Password Protected Image</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background: linear-gradient(135deg, #8e44ad, #3498db);
-            font-family: Arial, sans-serif;
-            margin: 0;
-            color: white;
-        }
+  <meta charset="UTF-8">
+  <title>Speak French Fast Academy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        #container {
-            text-align: center;
-            background: rgba(0, 0, 0, 0.7);
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5);
-        }
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
-        input[type="password"] {
-            padding: 0.8rem;
-            border: none;
-            border-radius: 5px;
-            margin-bottom: 1rem;
-            font-size: 1rem;
-            width: 80%;
-        }
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
 
-        button {
-            padding: 0.8rem 1.5rem;
-            border: none;
-            border-radius: 5px;
-            background: #e74c3c;
-            color: white;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
+    body {
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
 
-        button:hover {
-            background: #c0392b;
-        }
+    h1 {
+      margin-bottom: 10px;
+      font-size: 2.5rem;
+    }
 
-        #image {
-            display: none;
-            margin-top: 2rem;
-            max-width: 100%;
-            border-radius: 10px;
-            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5);
-        }
-    </style>
+    p {
+      margin-bottom: 30px;
+      opacity: 0.8;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      width: 90%;
+      max-width: 1000px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 15px;
+      text-align: center;
+      backdrop-filter: blur(10px);
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: translateY(-5px) scale(1.03);
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .card a {
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      font-size: 1.1rem;
+      display: block;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 0.8rem;
+      opacity: 0.6;
+    }
+  </style>
 </head>
+
 <body>
-    <div id="container">
-        <h1>Password Protected Image</h1>
-        <p>Password please:</p>
-        <input type="password" id="passwordInput" placeholder="Enter your password">
-        <br>
-        <button onclick="checkPassword()">Submit</button>
-        <img id="image" src="image.jpg" alt="Secret Image">
-    </div>
 
-    <script>
-        function checkPassword() {
-            const password = document.getElementById('passwordInput').value;
-            const correctPassword = "pandey"; // Replace this with your password
+  <h1>🇫🇷 Speak French Fast</h1>
+  <p>Choose your module to begin learning</p>
 
-            if (password === correctPassword) {
-                document.getElementById('image').style.display = 'block';
-            } else {
-                alert("Incorrect password. Try again!");
-            }
-        }
-    </script>
+  <div class="container">
+
+    <div class="card"><a href="Module 1A/index.html">Module 1A</a></div>
+    <div class="card"><a href="Module 1B/index.html">Module 1B</a></div>
+    <div class="card"><a href="Module 2 Lower Intermidate/index.html">Module 2 Lower Intermediate</a></div>
+    <div class="card"><a href="Module 3 Intermidate/index.html">Module 3 Intermediate</a></div>
+    <div class="card"><a href="module 4 Higher Intermidate/index.html">Module 4 Higher Intermediate</a></div>
+    <div class="card"><a href="Module 5/index.html">Module 5</a></div>
+    <div class="card"><a href="Module 6/index.html">Module 6</a></div>
+    <div class="card"><a href="Movie and songs/index.html">Movies & Songs</a></div>
+    <div class="card"><a href="Passed in 4 months/index.html">Passed in 4 Months</a></div>
+
+  </div>
+
+  <footer>
+    © 2026 Speak French Fast Academy
+  </footer>
+
 </body>
 </html>
